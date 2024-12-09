@@ -7,12 +7,18 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout sources
+      # Step 1: Checkout the main repository (where workflow runs)
+      - name: Checkout main repository
         uses: actions/checkout@v4
-      
-      - name: Print github.action_path
-        run: |
-          echo "The value of github.action_path is: ${{ github.action_path }}"
 
-      - uses: aparnajyothi-y/testcomposite@main
+      # Step 2: Checkout the composite action repository
+      - name: Checkout composite action repository
+        uses: actions/checkout@v4
+        with:
+          repository: aparnajyothi-y/testcomposite
+          ref: main
+          path: composite_action
 
+      # Step 3: Use the composite action
+      - name: Run Composite Action
+        uses: ./composite_action
