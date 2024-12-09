@@ -9,9 +9,10 @@ jobs:
     steps:
       - name: Checkout sources
         uses: actions/checkout@v4
-
-      - uses: aparnajyothi-y/testcomposite@main
-
+      
       - name: Print github.action_path
         run: |
           echo "The value of github.action_path is: ${{ github.action_path }}"
+
+      - uses: aparnajyothi-y/testcomposite@main
+
