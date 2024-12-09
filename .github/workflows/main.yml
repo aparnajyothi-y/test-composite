@@ -11,11 +11,6 @@ jobs:
       - name: Checkout main repository
         uses: actions/checkout@v4
 
-      # Step 2: Checkout the composite action repository
-      - name: Checkout composite action repository
-        uses: actions/checkout@v4
-   
-
       # Step 3: Use the composite action
       - name: Run Composite Action
         uses: aparnajyothi-y/testcomposite@main
