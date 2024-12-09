@@ -14,11 +14,8 @@ jobs:
       # Step 2: Checkout the composite action repository
       - name: Checkout composite action repository
         uses: actions/checkout@v4
-        with:
-          repository: aparnajyothi-y/testcomposite
-          ref: main
-          path: composite_action
+   
 
       # Step 3: Use the composite action
       - name: Run Composite Action
-        uses: ./composite_action
+        uses: aparnajyothi-y/testcomposite@main
